@@ -24,10 +24,8 @@ THEN I am taken to the corresponding section of the README
 ```
 
 ## Features
-1) 
-2) 
-3) 
-4) 
+1) Ability to input README criteria through terminal 
+2) Creates generated README file
 
 ## Programs 
 Javascript, Terminal
