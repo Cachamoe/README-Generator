@@ -1,9 +1,7 @@
 # README-Generator
 ![](image2/Screen%20Shot%202020-09-28%20at%2010.35.22%20AM.png)
 ## Overview
-This 
-
-Here is a link to the deployed webpage: [https://cachamoe.github.io/Updated-Portfolio/]
+This is my README Generator! 
 
 I completed this assignment given the acceptance criteria: 
 
@@ -25,14 +23,14 @@ WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
 ```
 
-## Website Features
+## Features
 1) 
 2) 
 3) 
 4) 
 
 ## Programs 
-
+Javascript, Terminal
 
 ## Author/s
 Caleb Chaney
