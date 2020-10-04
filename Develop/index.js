@@ -2,10 +2,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-
+const axios = require("axios");
 const writeFileAsync = util.promisify(fs.writeFile);
 
-// array of questions for user
+// Array of questions for user
 function promptUser() {
     return inquirer.prompt([
         {
@@ -29,7 +29,7 @@ function promptUser() {
             question: "Provide instruction and examples for use."
         },
         {
-            type: "checkbox",
+            type: "list",
             name: "License",
             question: "What is the license for the application?",
             choices: [
@@ -52,49 +52,63 @@ function promptUser() {
         },
         {
             type: "input",
-            name: "Questions",
-            question: "Any questions?"
+            name: "GitHub",
+            question: "What is your GitHub username?"
+        },
+        {
+            type: "input",
+            name: "Email",
+            question: "What is your email address?"
         },
     ]);
 }
 
+// Function for inputing user answers into new README file
 function generateMd(answers) {
     return `
-    # ${answers.Title}
-    
-    ## Description
-    ${answers.Description}
-    
-    ## Table of Contents
-    1) Installation
-    2) Usage
-    3) License
-    4) Contributing
-    5) Tests
-    6) Questions
-    
-    ## Installation
-    ${answers.Installation}
+# ${answers.Title}
 
-    ## Usage
-    ${answers.Usage}
+## Description
+${answers.Description}
 
-    ## License
-    ${answers.License}
+## Table of Contents
+1) Installation
+2) Usage
+3) License
+4) Contributing
+5) Tests
+6) Questions
 
-    ## Contributing 
-    ${answers.Tests}
+## Installation
+${answers.Installation}
 
-    ## Questions
-    ${answers.Questions}
-    `;
+## Usage
+${answers.Usage}
+
+## License
+${answers.License === "MIT" ? "[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)" :
+            answers.License === "APACHE 2.0" ? "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)" :
+                answers.License === "GPL 3.0" ? "[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)" :
+                    answers.License === "BSD 3" ? "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)" :
+                        ""}
+## Contributing 
+${answers.Tests}
+
+## Questions
+GitHub Profile: ${answers.GitHubProfile} <br>
+Email: ${answers.Email}
+`;
 }
 
+// Function for generating new README file
 promptUser()
     .then(function (answers) {
-        const md = generateMd(answers);
+        axios.get("https://api.github.com/users/" + answers.GitHub).then(function(response){
+            answers.GitHubProfile = response.data.html_url;
+            const md = generateMd(answers);
 
-        return writeFileAsync("README.md", md);
+            return writeFileAsync("README.md", md);
+        })     
     })
     .then(function () {
         console.log("Successfully wrote to README.md");
