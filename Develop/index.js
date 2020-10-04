@@ -20,11 +20,6 @@ function promptUser() {
         },
         {
             type: "input",
-            name: "Table",
-            question: "Table of contents for README."
-        },
-        {
-            type: "input",
             name: "Installation",
             question: "What are the steps required to install your project?"
         },
@@ -34,9 +29,16 @@ function promptUser() {
             question: "Provide instruction and examples for use."
         },
         {
-            type: "input",
+            type: "checkbox",
             name: "License",
-            question: "What is the license for the application?"
+            question: "What is the license for the application?",
+            choices: [
+                "MIT",
+                "APACHE 2.0",
+                "GPL 3.0",
+                "BSD 3",
+                "None",
+            ]
         },
         {
             type: "input",
@@ -64,7 +66,12 @@ function generateMd(answers) {
     ${answers.Description}
     
     ## Table of Contents
-    ${answers.Table}
+    1) Installation
+    2) Usage
+    3) License
+    4) Contributing
+    5) Tests
+    6) Questions
     
     ## Installation
     ${answers.Installation}
