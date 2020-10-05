@@ -1,7 +1,7 @@
 # README-Generator
 ![](image2/Screen%20Shot%202020-09-28%20at%2010.35.22%20AM.png)
 ## Overview
-This is my README Generator! 
+This is my README Generator! This application helps the user to save time by not having to completely design a README from scratch. 
 
 I completed this assignment given the acceptance criteria: 
 
