@@ -1,5 +1,5 @@
 # README-Generator
-![](Screen%20Shot%202020-10-05%20at%201.43.07%20PM.png)
+![](Screen%20Shot%202020-10-05%20at%202.26.36%20PM.png)
 ## Overview
 This is my README Generator! This application helps the user to save time by not having to completely design a README from scratch. 
 
@@ -28,6 +28,7 @@ THEN I am taken to the corresponding section of the README
 2) Creates generated README file
 3) Generated README contains a working link to your GitHub profile
 4) License selected will show as a badge
+5) Table of contents link to other sections of the generated README
 
 
 ## Programs 
