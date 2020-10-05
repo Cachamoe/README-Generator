@@ -92,6 +92,9 @@ ${answers.License === "MIT" ? "[![MIT License](https://img.shields.io/apm/l/atom
                     answers.License === "BSD 3" ? "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)" :
                         ""}
 ## Contributing 
+${answers.Contributing}
+
+##Tests
 ${answers.Tests}
 
 ## Questions
