@@ -26,6 +26,9 @@ THEN I am taken to the corresponding section of the README
 ## Features
 1) Ability to input README criteria through terminal 
 2) Creates generated README file
+3) Generated README contains a working link to your GitHub profile
+4) License selected will show as a badge
+
 
 ## Programs 
 Javascript, Terminal
