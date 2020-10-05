@@ -72,12 +72,12 @@ function generateMd(answers) {
 ${answers.Description}
 
 ## Table of Contents
-1) Installation
-2) Usage
-3) License
-4) Contributing
-5) Tests
-6) Questions
+1) [Installation](##installation)
+2) [Usage](##usage)
+3) [License](##license)
+4) [Contributing](##contributing)
+5) [Tests](##tests)
+6) [Questions](##questions)
 
 ## Installation
 ${answers.Installation}
@@ -94,7 +94,7 @@ ${answers.License === "MIT" ? "[![MIT License](https://img.shields.io/apm/l/atom
 ## Contributing 
 ${answers.Contributing}
 
-##Tests
+## Tests
 ${answers.Tests}
 
 ## Questions
@@ -106,12 +106,12 @@ Email: ${answers.Email}
 // Function for generating new README file
 promptUser()
     .then(function (answers) {
-        axios.get("https://api.github.com/users/" + answers.GitHub).then(function(response){
+        axios.get("https://api.github.com/users/" + answers.GitHub).then(function (response) {
             answers.GitHubProfile = response.data.html_url;
             const md = generateMd(answers);
 
             return writeFileAsync("README.md", md);
-        })     
+        })
     })
     .then(function () {
         console.log("Successfully wrote to README.md");
