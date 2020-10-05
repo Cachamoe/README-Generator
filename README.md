@@ -32,7 +32,7 @@ THEN I am taken to the corresponding section of the README
 
 
 ## Programs 
-Javascript, Terminal
+Javascript, Node.js, Terminal
 
 ## Author/s
 Caleb Chaney
