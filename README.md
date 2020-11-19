@@ -36,5 +36,8 @@ THEN I am taken to the corresponding section of the README
 ## Programs 
 Javascript, Node.js, Terminal
 
+## License 
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
 ## Author/s
 Caleb Chaney
