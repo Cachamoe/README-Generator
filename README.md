@@ -33,7 +33,7 @@ THEN I am taken to the corresponding section of the README
 5) Table of contents link to other sections of the generated README
 
 
-## Programs 
+## Technologies 
 Javascript, Node.js, Terminal
 
 ## License 
